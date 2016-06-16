@@ -1,10 +1,11 @@
 var React = require('react');
-var api = require('./ApiClient');
+var Api = require('./ApiClient');
+var JsonParser = require('./GodJSONParser');
+var GodDirectory = require('./components/GodDirectory');
 
 // In a proper deployment situation these credentials would be pulled down
 // from a config in an S3 bucket. Hard-coded for the purpose of this exercise.
 var API_ENDPOINT = 'https://athena-7.herokuapp.com/ancients.json';
-
 
 var App = React.createClass({
 
@@ -15,12 +16,12 @@ var App = React.createClass({
 	componentWillMount: function() {
 		var self = this;
 		this.setState({ response: undefined });
-		api.get(
+		Api.get(
 			API_ENDPOINT,
 			null,
 			function(data) {
 				self.setState({
-				    response: 'Hello'
+				    response: JsonParser.parse(data.body)
 				});
 			}
 		)
@@ -30,8 +31,11 @@ var App = React.createClass({
 		if ( !this.state.response ) {
 			return <div>The response is not here yet!</div>
 		}
+		var godData = this.state.response;
 		return (
-			<div>{ this.state.response }</div>
+			<div>
+				<GodDirectory data={godData}/>
+			</div>
 		)
 	}
 

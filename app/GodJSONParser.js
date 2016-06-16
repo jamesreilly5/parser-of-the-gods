@@ -11,14 +11,11 @@ var parseGod = function(godData, index) {
 
 module.exports = {
     parse: function(data) {
-        json = JSON.parse(data),
-        model = {
-            gods: []
-        };
+        model = { gods: [] };
 
         // TODO: Consider what happens when a huge array is given (i.e. should we paginate results)
-        for(var i = 0; i < json.length; i++) {
-            godData = parseGod(json[i], i);
+        for(var i = 0; i < data.length; i++) {
+            var godData = parseGod(data[i], i);
             model.gods.push(godData);
         }
 
