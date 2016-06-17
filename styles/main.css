@@ -21,3 +21,7 @@ h2 {
 	-webkit-border-radius: 10px 10px 10px 10px;
 	background-color: #CD5A5A;
 }
+
+.spinner {
+	margin-top: 3em;
+}
