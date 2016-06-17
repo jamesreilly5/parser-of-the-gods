@@ -3,9 +3,9 @@ var God = require('./God');
 
 var GodDirectory = React.createClass({
     render: function() {
-        debugger;
         return (
             <div clasName='row'>
+                <h1 className='text-center'>Directory of the gods</h1>
                 {
                     this.props.data.gods.map(function(god) {
                         return <God key={god.id} name={god.name}

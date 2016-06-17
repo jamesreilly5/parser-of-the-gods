@@ -1,5 +1,5 @@
 body {
-	background-color: #643EBF;
+	background-color: #AA3939;
 	color: white;
 }
 
@@ -9,4 +9,15 @@ h1 {
 
 h2 {
 	font-size: 1.5em;
+}
+
+.god-details {
+	border: 1px solid white;
+	margin: 1em;
+	padding: 1em;
+	line-height: 2em;
+	border-radius: 10px 10px 10px 10px;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+	background-color: #CD5A5A;
 }
