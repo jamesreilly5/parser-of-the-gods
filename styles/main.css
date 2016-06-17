@@ -1,3 +1,5 @@
+/* general */
+
 body {
 	background-color: #AA3939;
 	color: white;
@@ -11,6 +13,7 @@ h2 {
 	font-size: 1.5em;
 }
 
+/* god details */
 .god-details {
 	border: 0.25em solid white;
 	margin: 1em;
@@ -22,6 +25,34 @@ h2 {
 	background-color: #CD5A5A;
 }
 
+/* spinner */
 .spinner {
 	margin-top: 3em;
+}
+
+/* Search Box */
+form {
+    width:500px;
+    margin: 3em auto;
+}
+
+.search {
+	width: 75%;
+	height: 5em;
+    padding:8px 15px;
+    border:0px solid #dbdbdb;
+}
+.button {
+	width: 25%;
+	height: 5em;
+    position:relative;
+    padding:6px 15px;
+    left:-8px;
+    border:2px solid #650C0C;
+    background-color:#650C0C;
+    color:#fafafa;
+}
+.button:hover  {
+    background-color:#fafafa;
+    color:#650C0C;
 }
