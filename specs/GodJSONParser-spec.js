@@ -19,6 +19,12 @@ describe('GodJSONParser', function() {
                 expect(JsonParser.parse(validResponseData)).toEqual(expectedOutput);
             });
         });
+
+        describe('when no data is supplied', function() {
+            it('returns an empty array', function() {
+                expect(JsonParser.parse(null)).toEqual({ gods: [] });
+            });
+        });
     });
 
 });
