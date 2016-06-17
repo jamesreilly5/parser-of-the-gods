@@ -60,8 +60,6 @@ describe('GodCache', function() {
         localStorage.setItem(CACHE_KEY, null);
     });
 
-    // TODO: updates the cache when not equal
-    // TODO: Sets the cache when empty
     // TODO: Expire cache
 
 });

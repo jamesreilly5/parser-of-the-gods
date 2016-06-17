@@ -22,19 +22,16 @@ var GodDirectory = React.createClass({
 
 	componentWillMount: function() {
 		var self = this;
-		Api.get(
-			API_ENDPOINT,
-			this.handleError,
-			function(data) {
-				self.setState({
-				    data: JsonParser.parse(data.body)
-				});
-			}
-		)
+		Api.get(API_ENDPOINT, this.handleError, this.handleBlanketSearchSuccess);
 	},
 
     errorClickAction: function() {
 		Api.get(ERROR_ENDPOINT, this.handleError, null);
+    },
+
+    // Structure of json is different to hitting endpoint without search query param.
+    handleBlanketSearchSuccess: function(event) {
+        this.setState({ data: JsonParser.parse(event.body) });
     },
 
     // Structure of json is different to hitting endpoint without search query param.
