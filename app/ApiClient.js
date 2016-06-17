@@ -1,6 +1,8 @@
 var request = require('superagent');
 var Promise = require('es6-promise').Promise;
 
+var errorCode = /^4[0-9].*$/;
+
 module.exports = {
     get: function(url, onError, onSucess) {
         var self = this;
@@ -9,8 +11,8 @@ module.exports = {
             request
             .get(url)
             .end(function(err, res) {
-                if (res.status === '404') {
-                    onError();
+                if (errorCode.test(res.status)) {
+                    onError(res);
                 } else {
                     onSucess(res);
                 }

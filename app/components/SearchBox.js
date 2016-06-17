@@ -7,7 +7,7 @@ var SearchBox = React.createClass({
         e.preventDefault();
         var inputValue = document.getElementById('search-input').value,
             url = this.props.apiEndpoint + '?' + this.props.queryName + '=' + inputValue;
-        ApiClient.get(url, null, this.props.onSuccess);
+        ApiClient.get(url, this.props.onError, this.props.onSuccess);
     },
 
 	render: function() {

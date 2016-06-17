@@ -24,6 +24,10 @@ module.exports = [
                 throw new Error(404);
             }
 
+            if (match[1] === '/some-invalid-endpoint-with-a-420') {
+                throw new Error(420);
+            }
+
             /**
             * Checking on parameters example:
             *   request.get('https://domain.example/hero').send({superhero: "superman"}).end(function(err, res){

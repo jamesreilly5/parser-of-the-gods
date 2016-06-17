@@ -5,8 +5,8 @@ var config = require('./support/superagent-mock-config');
 describe("ApiClient", function() {
 
     var dummyCallbacks = {
-            sucessCallback: function(data) { debugger;/* I am a dummy function */ },
-            errorCallback: function() { debugger;/* I am a dummy function */ }
+            sucessCallback: function(data) { /* I am a dummy function */ },
+            errorCallback: function() { /* I am a dummy function */ }
         },
         superagentMock = null,
         API_ENDPOINT = 'https://my-api';
@@ -33,6 +33,18 @@ describe("ApiClient", function() {
         it("invokes the error callback", function() {
             ApiClient.get(
                 API_ENDPOINT + '/some-invalid-endpoint',
+                dummyCallbacks.errorCallback,
+                dummyCallbacks.sucessCallback
+            );
+            expect(dummyCallbacks.errorCallback).toHaveBeenCalled();
+            expect(dummyCallbacks.sucessCallback).not.toHaveBeenCalled();
+        });
+    });
+
+    describe("when a 420 is returned", function() {
+        it("invokes the error callback", function() {
+            ApiClient.get(
+                API_ENDPOINT + '/some-invalid-endpoint-with-a-420',
                 dummyCallbacks.errorCallback,
                 dummyCallbacks.sucessCallback
             );
