@@ -5,7 +5,7 @@ var SearchBox = React.createClass({
     doSearch:function(e){
         e.preventDefault();
         var inputValue = document.getElementById('search-input').value;
-        this.props.queryApi(inputValue);
+        this.props.doSearch(inputValue);
     },
 
 	render: function() {

@@ -24,7 +24,7 @@ var GodDirectory = React.createClass({
 
 	componentWillMount: function() {
 		var self = this;
-		Api.get(API_ENDPOINT, this.handleError, this.handleBlanketSearchSuccess);
+		Api.get(API_ENDPOINT, this.handleError, this.handleApiBlanketSearchSuccess);
 	},
 
     errorClickAction: function() {
@@ -37,20 +37,20 @@ var GodDirectory = React.createClass({
 
         if(cachedValue) {
             // TODO: Don't hard code the hash, figure out more elegant way to parse two formats of results.
-            this.handleSearchSuccess(searchTerm, { body: { ancients: cachedValue } })
+            this.handleApiSearchSuccess(searchTerm, { body: { ancients: cachedValue } })
         } else {
             // Bind null for first param as we don't care about 'this'
-            ApiClient.get(url, this.handleError, this.handleSearchSuccess.bind(null, searchTerm));
+            ApiClient.get(url, this.handleError, this.handleApiSearchSuccess.bind(null, searchTerm));
         }
     },
 
     // Structure of json is different to hitting endpoint without search query param.
-    handleBlanketSearchSuccess: function(event) {
+    handleApiBlanketSearchSuccess: function(event) {
         this.setState({ data: JsonParser.parse(event.body) });
     },
 
     // Structure of json is different to hitting endpoint without search query param.
-    handleSearchSuccess: function(searchTerm, event) {
+    handleApiSearchSuccess: function(searchTerm, event) {
         // TODO: empty array if ancients not found
         // TODO: Don't set value in cache again if value was retrieved from cache in first place (break out method?)
         GodCache.set(searchTerm, event.body['ancients']);
@@ -69,7 +69,7 @@ var GodDirectory = React.createClass({
             <div clasName='row god-directory'>
                 <h1 className='text-center'>Directory of the gods</h1>
                 <div>
-                    <SearchBox queryApi={this.doSearch}/>
+                    <SearchBox doSearch={this.doSearch}/>
                     <ActionButton displayText='Hit me to see the error endpoint' clickAction={this.errorClickAction} />
                 </div>
                 {
