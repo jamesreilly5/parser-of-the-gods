@@ -29,13 +29,13 @@ describe('GodCache', function() {
     describe('set', function() {
         describe('when the cache is completely empty', function() {
             it('sets creates the cache and sets the value specified', function() {
-                GodCache.set({ fizz: { some: 'data' } });
+                GodCache.set('fizz', { some: 'data' });
                 expect(JSON.parse(localStorage.getItem(CACHE_KEY))).toEqual({ fizz: { some: 'data'} });
             });
 
             it('does not override other entries in the cache', function() {
-                GodCache.set({ fizz: { some: 'data' } });
-                GodCache.set({ buzz: { some: 'other data data' } });
+                GodCache.set('fizz', { some: 'data' });
+                GodCache.set('buzz', { some: 'other data data' });
                 expect(JSON.parse(localStorage.getItem(CACHE_KEY))).toEqual(
                     { fizz: { some: 'data'}, buzz: { some: 'other data data' } }
                 );
@@ -48,7 +48,7 @@ describe('GodCache', function() {
             });
 
             it('does not overide the existing entry', function() {
-                GodCache.set({ buzz: { some: 'other data data' } });
+                GodCache.set('buzz', { some: 'other data data' });
                 expect(JSON.parse(localStorage.getItem(CACHE_KEY))).toEqual(
                     { more: { data: 'to test' }, buzz: { some: 'other data data' } }
                 );

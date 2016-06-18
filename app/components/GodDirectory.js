@@ -8,6 +8,8 @@ var ActionButton = require('./ActionButton');
 
 var JsonParser = require('./../GodJSONParser');
 var Api = require('./../ApiClient');
+var GodCache = require('./../GodCache');
+var ApiClient = require('./../ApiClient');
 
 // In a proper deployment situation these credentials would be pulled down
 // from a config in an S3 bucket. Hard-coded for the purpose of this exercise.
@@ -29,14 +31,29 @@ var GodDirectory = React.createClass({
 		Api.get(ERROR_ENDPOINT, this.handleError, null);
     },
 
+    doSearch: function(searchTerm) {
+        var cachedValue = GodCache.get(searchTerm),
+            url = API_ENDPOINT + '?search=' + searchTerm;
+
+        if(cachedValue) {
+            // TODO: Don't hard code the hash, figure out more elegant way to parse two formats of results.
+            this.handleSearchSuccess(searchTerm, { body: { ancients: cachedValue } })
+        } else {
+            // Bind null for first param as we don't care about 'this'
+            ApiClient.get(url, this.handleError, this.handleSearchSuccess.bind(null, searchTerm));
+        }
+    },
+
     // Structure of json is different to hitting endpoint without search query param.
     handleBlanketSearchSuccess: function(event) {
         this.setState({ data: JsonParser.parse(event.body) });
     },
 
     // Structure of json is different to hitting endpoint without search query param.
-    handleSearchSuccess: function(event) {
+    handleSearchSuccess: function(searchTerm, event) {
         // TODO: empty array if ancients not found
+        // TODO: Don't set value in cache again if value was retrieved from cache in first place (break out method?)
+        GodCache.set(searchTerm, event.body['ancients']);
         this.setState({ data: JsonParser.parse(event.body['ancients']) });
     },
 
@@ -52,8 +69,7 @@ var GodDirectory = React.createClass({
             <div clasName='row god-directory'>
                 <h1 className='text-center'>Directory of the gods</h1>
                 <div>
-                    <SearchBox apiEndpoint={API_ENDPOINT} queryName={'search'}
-                        onSuccess={this.handleSearchSuccess} onError={this.handleError}/>
+                    <SearchBox queryApi={this.doSearch}/>
                     <ActionButton displayText='Hit me to see the error endpoint' clickAction={this.errorClickAction} />
                 </div>
                 {

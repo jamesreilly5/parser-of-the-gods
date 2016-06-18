@@ -1,13 +1,11 @@
 var React = require('react');
-var ApiClient = require('./../ApiClient');
 
 var SearchBox = React.createClass({
 
     doSearch:function(e){
         e.preventDefault();
-        var inputValue = document.getElementById('search-input').value,
-            url = this.props.apiEndpoint + '?' + this.props.queryName + '=' + inputValue;
-        ApiClient.get(url, this.props.onError, this.props.onSuccess);
+        var inputValue = document.getElementById('search-input').value;
+        this.props.queryApi(inputValue);
     },
 
 	render: function() {

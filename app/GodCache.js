@@ -6,15 +6,14 @@ module.exports = {
         return godData[key];
     },
 
-    set: function(value) {
+    set: function(searchKey, hash) {
         godData = JSON.parse(localStorage.getItem('godCache'));
-        if(godData) {
-            // Assuming we will always only contain one key
-            var key = Object.keys(value)[0];
-            godData[key] = value[key];
-        } else {
-            godData = value;
+        if(!godData) {
+            godData = {};
         }
+        // Assuming we will always only contain one key
+        var key = Object.keys(hash)[0];
+        godData[searchKey] = hash;
         localStorage.setItem('godCache', JSON.stringify(godData))
     }
 };
