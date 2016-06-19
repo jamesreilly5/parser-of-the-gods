@@ -1,4 +1,4 @@
-# parser-of-the-gods
+# Directory of the Gods
 A React app that reads/searches from an API and displays the results
 
 ![Alt text](/screenshot.png?raw=true "Parser of the Gods App")
