@@ -7,7 +7,7 @@ var format = require('date-format');
 var God = React.createClass({
 	render: function() {
 		return (
-            <div className='col-md-4'>
+            <div className='col-md-4 col-sm-6'>
 				<div className='god-details '>
 					<div className='god-icon'></div>
 					<div className='row god-stat'>

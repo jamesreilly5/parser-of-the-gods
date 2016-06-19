@@ -72,7 +72,7 @@ var GodDirectory = React.createClass({
                     <h2 className='text-center'>Find the right God for you, quickly and easily.</h2>
                     <div className='row search-inputs'>
                         <div className='col-md-7 col-md-offset-1'>
-                            <SearchBox doSearch={this.doSearch} placeholder="Enter your God's name here" displayText="Find me a God"/>
+                            <SearchBox doSearch={this.doSearch} placeholder="Enter your God's name" displayText="Find me a God"/>
                         </div>
                         <div className='col-md-3'>
                             <ActionButton displayText='Find me an error page' clickAction={this.errorClickAction} />

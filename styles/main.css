@@ -95,7 +95,6 @@ h3 {
 }
 
 /* Search Box */
-
 .search {
 	width: 70%;
 	height: 70px;
@@ -152,5 +151,21 @@ h3 {
 
 	.action-button, .search-box {
 		margin: 1em auto;
+	}
+
+	.god-details {
+		margin: 2em 0;
+	}
+
+	.search {
+		width: 60%;
+	}
+
+	.button {
+		width: 40%;
+	}
+
+	.action-button {
+		width: 100%;
 	}
 }
