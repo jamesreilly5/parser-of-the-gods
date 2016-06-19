@@ -26,6 +26,7 @@ You can style the application in any way that you choose.
 ### Development
 **Running the app**
 
+- Run `npm install`
 - Run `NODE_ENV=development gulp`
 - Go to `localhost:8889` to display the app
 
