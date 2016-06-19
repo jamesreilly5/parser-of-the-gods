@@ -79,6 +79,7 @@ var GodDirectory = React.createClass({
                         </div>
                     </div>
                 </section>
+
                 <section className='container'>
                     {
                         this.state.data.gods.map(function(god) {
@@ -87,7 +88,6 @@ var GodDirectory = React.createClass({
                         })
                     }
                 </section>
-
             </div>
         )
     }

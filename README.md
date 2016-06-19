@@ -18,3 +18,24 @@ Using a JS MVC framework of your choice (or regular Javascript/jQuery), please c
 5. If the search term called a second time then fetch it from a local JS cache rather than hitting the network.
 
 You can style the application in any way that you choose.
+
+### Dependencies
+* Node/npm
+* Gulp
+
+### Development
+**Running the app**
+
+- Run `NODE_ENV=development gulp`
+- Go to `localhost:8889` to display the app
+
+**Run tests in browser**
+
+Go to `localhost:8889/testrunner.html` to see your tests
+
+**Minify the code, ready for production**
+
+Run `NODE_ENV=production gulp deploy`
+
+### Known issues / design issues
+* Should use less over css
