@@ -1,5 +1,5 @@
 # Directory of the Gods
-A React app that reads/searches from an API and displays the results. This was build as part of a technical test for a front end developer position.
+A React app that reads/searches from an API and displays the results. This was built as part of a technical test for a front end developer position.
 
 ![Alt text](/screenshot.png?raw=true "Parser of the Gods App")
 
