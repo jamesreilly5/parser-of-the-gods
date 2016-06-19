@@ -47,7 +47,6 @@ h2 {
 
 .stat-type {
 	font-weight: 400;
-	color: ##333f48;
 }
 
 .god-icon {
@@ -65,6 +64,12 @@ h2 {
 /* spinner */
 .spinner {
 	margin-top: 3em;
+	color: #333f48;
+}
+
+.spinner .god-icon {
+	height: 200px;
+	margin: 0;
 }
 
 /* Search Box */

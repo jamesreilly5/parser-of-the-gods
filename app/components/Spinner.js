@@ -3,7 +3,10 @@ var React = require('react');
 var Spinner = React.createClass({
 	render: function() {
 		return (
-            <div className='row text-center spinner'><h3>Brace yourselves, the gods are coming...</h3></div>
+			<div className='spinner'>
+				<div className='god-icon'></div>
+				<div className='row text-center spinner'><h1>Brace yourselves, the Gods are coming...</h1></div>
+			</div>
 		)
 	}
 });
