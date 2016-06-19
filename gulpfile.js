@@ -14,6 +14,9 @@ var glob = require('glob');
 var livereload = require('gulp-livereload');
 var jasminePhantomJs = require('gulp-jasmine2-phantomjs');
 var connect = require('gulp-connect');
+var plumber = require('gulp-plumber');
+var changed = require('gulp-changed');
+var imagemin = require('gulp-imagemin');
 
 // External dependencies you do not want to rebundle while developing,
 // but include in your application deployment
@@ -137,6 +140,17 @@ var cssTask = function (options) {
     }
 }
 
+var imageTask = function(options) {
+    gulp.src(options.src)
+        .pipe(plumber({
+            errorHandler: null
+        }))
+        .pipe(changed(options.dest))
+        .pipe(imagemin())
+        .pipe(gulp.dest(options.dest))
+        .pipe(notify({ message: 'Images task complete' }));
+}
+
 // Starts our development workflow
 gulp.task('default', function () {
   livereload.listen();
@@ -150,6 +164,12 @@ gulp.task('default', function () {
   cssTask({
     development: true,
     src: './styles/**/*.css',
+    dest: './build'
+  });
+
+  imageTask({
+    development: true,
+    src: './images/**/*',
     dest: './build'
   });
 

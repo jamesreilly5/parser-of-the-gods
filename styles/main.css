@@ -1,8 +1,17 @@
 /* general */
 
 body {
-	background-color: #AA3939;
+	background-color: #e3e3e3;
 	color: white;
+}
+
+.hero {
+    background-image: url("gods.jpg");
+    background-color: #cccccc;
+	background-repeat: no-repeat;
+	background-size: cover;
+	text-shadow: 0 1px 1px #333f48;
+	border-bottom: 1px solid #e3e3e3;
 }
 
 h1 {
@@ -15,14 +24,19 @@ h2 {
 
 /* god details */
 .god-details {
-	border: 0.25em solid white;
+	border: 1px solid #e3e3e3;
 	margin: 1em;
 	padding: 1em;
 	line-height: 2em;
-	border-radius: 10px 10px 10px 10px;
-	-moz-border-radius: 10px 10px 10px 10px;
-	-webkit-border-radius: 10px 10px 10px 10px;
-	background-color: #CD5A5A;
+	border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
+	-webkit-border-radius: 5px 5px 5px 5px;
+	background-color: #ffffff;
+	color: #333f48;
+
+	-webkit-box-shadow: 2px 2px 5px 0px rgba(50, 50, 50, 0.5);
+	-moz-box-shadow:    2px 2px 5px 0px rgba(50, 50, 50, 0.5);
+	box-shadow:         2px 2px 5px 0px rgba(50, 50, 50, 0.5);
 }
 
 /* spinner */
@@ -43,17 +57,19 @@ form {
     border:0px solid #dbdbdb;
 	color: black;
 }
+
 .button {
 	width: 25%;
 	height: 5em;
     position:relative;
     padding:6px 15px;
     left:-8px;
-    border:2px solid #650C0C;
-    background-color:#650C0C;
+    border:2px solid #37BC9B;
+    background-color:#37BC9B;
     color:#fafafa;
 }
+
 .button:hover  {
-    background-color:#fafafa;
-    color:#650C0C;
+    background-color:#48CFAD;
+    color:#fafafa;
 }
