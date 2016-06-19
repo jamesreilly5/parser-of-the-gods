@@ -5,7 +5,7 @@ var TestUtils = require('react-addons-test-utils');
 
 describe("App", function() {
 
-    it("renders the text 'The response is not here yet!'", function() {
+    it("renders the text 'Brace yourselves, the Gods are coming...'", function() {
         var app = TestUtils.renderIntoDocument(React.createElement(App));
         expect(ReactDOM.findDOMNode(app).textContent).toContain('Brace yourselves, the Gods are coming...');
     });
