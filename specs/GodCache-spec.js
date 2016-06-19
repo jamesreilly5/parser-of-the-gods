@@ -53,7 +53,7 @@ describe('GodCache', function() {
         });
 
         describe('when the cache is completely empty', function() {
-            it('sets creates the cache and sets the value specified and createdAt attribute', function() {
+            it('creates the cache and sets the value specified and createdAt attribute', function() {
                 GodCache.set('fizz', { some: 'data', createdAt: 'Sun Jun 19 2016 16:00:00 GMT+0100 (IST)' });
                 expect(JSON.parse(localStorage.getItem(CACHE_KEY))).toEqual({ fizz: { some: 'data', createdAt: '2016-06-19T15:00:00.000Z'} });
             });
