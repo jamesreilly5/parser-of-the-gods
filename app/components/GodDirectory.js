@@ -68,11 +68,11 @@ var GodDirectory = React.createClass({
         return (
             <div clasName='row god-directory'>
                 <div className='hero jumbotron'>
-                    <h1 className='text-center'>Directory of the gods</h1>
-                    <h2 className='text-center'>Find the right god for you quickly and easily</h2>
+                    <h1 className='text-center'>Directory of the Gods</h1>
+                    <h2 className='text-center'>Find the right God for you quickly and easily</h2>
                     <div className='row'>
                         <div className='col-md-6 col-md-offset-2'>
-                            <SearchBox doSearch={this.doSearch} placeholder="Enter your god's name here" displayText="Find me a god"/>
+                            <SearchBox doSearch={this.doSearch} placeholder="Enter your God's name here" displayText="Find me a God"/>
                         </div>
                         <div className='col-md-2'>
                             <ActionButton displayText='Find me an error page' clickAction={this.errorClickAction} />

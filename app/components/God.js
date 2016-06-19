@@ -7,17 +7,18 @@ var God = React.createClass({
 		return (
             <div className='col-md-4'>
 				<div className='god-details '>
-					<div>
-	                    <span>{ DisplayUtils.capitalise('Name:') }</span>
-	                    <span className='pull-right'>{ DisplayUtils.capitalise(this.props.name) }</span>
+					<div className='god-icon'></div>
+					<div className='row god-stat'>
+	                    <span className='col-xs-5 stat-type'>Name:</span>
+	                    <span className='col-xs-7'>{ DisplayUtils.capitalise(this.props.name) }</span>
 	                </div>
-	                <div>
-	                    <span>{ DisplayUtils.capitalise('Super Power:') }</span>
-	                    <span className='pull-right'>{ DisplayUtils.capitalise(this.props.superPower) }</span>
+	                <div className='row god-stat '>
+	                    <span className='col-xs-5 stat-type'>Super Power</span>
+	                    <span className='col-xs-7'>{ DisplayUtils.capitalise(this.props.superPower) }</span>
 	                </div>
-	                <div>
-	                    <span>{ DisplayUtils.capitalise('Date of death:') }</span>
-	                    <span className='pull-right'>{ DisplayUtils.capitalise(this.props.dateOfDeath) }</span>
+	                <div className='row god-stat'>
+	                    <span className='col-xs-5 stat-type'>Date of death</span>
+	                    <span className='col-xs-7'>{ DisplayUtils.capitalise(this.props.dateOfDeath) }</span>
 	                </div>
 				</div>
             </div>

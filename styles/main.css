@@ -12,6 +12,8 @@ body {
 	background-size: cover;
 	text-shadow: 0 1px 1px #333f48;
 	border-bottom: 1px solid #e3e3e3;
+	height: 450px;
+	margin-bottom: 1em;
 }
 
 h1 {
@@ -25,18 +27,39 @@ h2 {
 /* god details */
 .god-details {
 	border: 1px solid #e3e3e3;
-	margin: 0.5em;
-	padding: 1em;
+	margin: 1em;
+	padding: 2em;
 	line-height: 2em;
 	border-radius: 5px 5px 5px 5px;
 	-moz-border-radius: 5px 5px 5px 5px;
 	-webkit-border-radius: 5px 5px 5px 5px;
 	background-color: #ffffff;
-	color: #333f48;
+	color: #697684;
 
 	-webkit-box-shadow: 2px 2px 5px 0px rgba(50, 50, 50, 0.5);
 	-moz-box-shadow:    2px 2px 5px 0px rgba(50, 50, 50, 0.5);
 	box-shadow:         2px 2px 5px 0px rgba(50, 50, 50, 0.5);
+}
+
+.god-stat {
+	padding: 0.25em;
+}
+
+.stat-type {
+	font-weight: 400;
+	color: ##333f48;
+}
+
+.god-icon {
+	background-image: url("god-icon.png");
+	background-repeat: no-repeat;
+	background-position:center;
+	background-size: contain;
+	text-shadow: 0 1px 1px #333f48;
+	border-bottom: 1px solid #e3e3e3;
+	height: 100px;
+	text-align: center;
+	margin-bottom: 1em;
 }
 
 /* spinner */
@@ -45,9 +68,6 @@ h2 {
 }
 
 /* Search Box */
-.search-box {
-    margin: 3em auto;
-}
 
 .search {
 	width: 75%;
@@ -80,10 +100,13 @@ h2 {
 
 .action-button {
 	width: 100%;
-	margin: 3em auto;
 	border-radius: 5px 5px 5px 5px;
 	-moz-border-radius: 5px 5px 5px 5px;
 	-webkit-border-radius: 5px 5px 5px 5px;
+}
+
+.action-button, .search-box {
+	margin: 5em auto;
 }
 
 .button:hover  {
@@ -92,7 +115,7 @@ h2 {
 }
 
 
-@media screen and (min-width: 480px) {
+@media screen and (max-width: 1024px) {
 	.search-box, .action-button {
 	    margin: 1em auto;
 	}
