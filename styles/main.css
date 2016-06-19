@@ -24,6 +24,10 @@ h2 {
 	font-size: 1.5em;
 }
 
+h3 {
+	font-size: 1.25em;
+}
+
 /* god details */
 .god-details {
 	border: 1px solid #e3e3e3;
@@ -72,11 +76,23 @@ h2 {
 	margin: 0;
 }
 
+/* Error page */
+.error-icon {
+	background-image: url("error-icon.png");
+	background-repeat: no-repeat;
+	background-position:center;
+	background-size: contain;
+	text-shadow: 0 1px 1px #333f48;
+	border-bottom: 1px solid #e3e3e3;
+	height: 200px;
+	text-align: center;
+}
+
 /* Search Box */
 
 .search {
-	width: 75%;
-	height: 5em;
+	width: 70%;
+	height: 70px;
     padding:8px 15px;
     border:0px solid #dbdbdb;
 	color: black;
@@ -84,6 +100,7 @@ h2 {
 	border-radius: 5px 5px 5px 5px;
 	-moz-border-radius: 5px 5px 5px 5px;
 	-webkit-border-radius: 5px 5px 5px 5px;
+	font-size: 18px;
 }
 
 .search-button {
@@ -93,14 +110,15 @@ h2 {
 }
 
 .button {
-	width: 25%;
-	height: 5em;
+	width: 30%;
+	height: 70px;
     position:relative;
     padding:6px 15px;
     left:-8px;
     border:2px solid #37BC9B;
     background-color:#37BC9B;
     color:#fafafa;
+	font-size: 18px;
 }
 
 .action-button {
@@ -110,18 +128,23 @@ h2 {
 	-webkit-border-radius: 5px 5px 5px 5px;
 }
 
-.action-button, .search-box {
+.search-inputs {
 	margin: 5em auto;
 }
 
 .button:hover  {
     background-color:#48CFAD;
     color:#fafafa;
+	cursor: pointer;
 }
 
 
 @media screen and (max-width: 1024px) {
-	.search-box, .action-button {
+	.search-inputs {
 	    margin: 1em auto;
+	}
+
+	.action-button, .search-box {
+		margin: 1em auto;
 	}
 }

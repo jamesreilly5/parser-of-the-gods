@@ -3,7 +3,11 @@ var React = require('react');
 var Error = React.createClass({
 	render: function() {
 		return (
-            <div className='row text-center spinner'><h3>{this.props.errorMessage}</h3></div>
+        	<div className='row text-center spinner'>
+				<div className='error-icon'></div>
+				<h2>The Gods have forsaken you</h2>
+				<h3>Error: {this.props.errorMessage}</h3>
+			</div>
 		)
 	}
 });
