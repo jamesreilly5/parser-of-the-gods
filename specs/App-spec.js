@@ -7,7 +7,7 @@ describe("App", function() {
 
     it("renders the text 'The response is not here yet!'", function() {
         var app = TestUtils.renderIntoDocument(React.createElement(App));
-        expect(ReactDOM.findDOMNode(app).textContent).toEqual('Brace yourselves, the gods are coming...');
+        expect(ReactDOM.findDOMNode(app).textContent).toEqual('Brace yourselves, the Gods are coming...');
     });
 
 });
