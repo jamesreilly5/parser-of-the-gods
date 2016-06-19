@@ -1,4 +1,4 @@
-# parser-of-the-gods
+# Directory of the Gods
 A React app that reads/searches from an API and displays the results
 
 ![Alt text](/screenshot.png?raw=true "Parser of the Gods App")
@@ -26,6 +26,7 @@ You can style the application in any way that you choose.
 ### Development
 **Running the app**
 
+- Run `npm install`
 - Run `NODE_ENV=development gulp`
 - Go to `localhost:8889` to display the app
 
