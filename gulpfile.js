@@ -194,6 +194,12 @@ gulp.task('deploy', function () {
     dest: './dist'
   });
 
+  imageTask({
+    development: true,
+    src: './images/**/*',
+    dest: './dist'
+  });
+
 });
 
 gulp.task('test', function () {
