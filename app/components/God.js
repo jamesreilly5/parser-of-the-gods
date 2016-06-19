@@ -1,5 +1,4 @@
 var React = require('react');
-var FontAwesome = require('react-fontawesome');
 var DisplayUtils = require('./../DisplayUtils');
 
 var format = require('date-format');
