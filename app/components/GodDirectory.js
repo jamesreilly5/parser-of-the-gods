@@ -70,17 +70,21 @@ var GodDirectory = React.createClass({
                 <div className='hero jumbotron'>
                     <h1 className='text-center'>Directory of the gods</h1>
                     <h2 className='text-center'>Find the right god for you quickly and easily</h2>
-                    <SearchBox doSearch={this.doSearch} placeholder="Enter your god's name here" displayText="Find me a god"/>
-                    <ActionButton displayText='Find me an error page' clickAction={this.errorClickAction} />
+                    <div className='row'>
+                        <div className='col-md-6 col-md-offset-2'>
+                            <SearchBox doSearch={this.doSearch} placeholder="Enter your god's name here" displayText="Find me a god"/>
+                        </div>
+                        <div className='col-md-2'>
+                            <ActionButton displayText='Find me an error page' clickAction={this.errorClickAction} />
+                        </div>
+                    </div>
                 </div>
-                <div className='row'>
                 {
                     this.state.data.gods.map(function(god) {
                         return <God key={god.id} name={god.name}
                             superPower={god.superPower} dateOfDeath={god.dateOfDeath.toString()} />
                     })
                 }
-                </div>
             </div>
         )
     }

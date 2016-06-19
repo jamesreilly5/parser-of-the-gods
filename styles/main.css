@@ -25,7 +25,7 @@ h2 {
 /* god details */
 .god-details {
 	border: 1px solid #e3e3e3;
-	margin: 1em;
+	margin: 0.5em;
 	padding: 1em;
 	line-height: 2em;
 	border-radius: 5px 5px 5px 5px;
@@ -45,8 +45,7 @@ h2 {
 }
 
 /* Search Box */
-form {
-    width:500px;
+.search-box {
     margin: 3em auto;
 }
 
@@ -80,6 +79,8 @@ form {
 }
 
 .action-button {
+	width: 100%;
+	margin: 3em auto;
 	border-radius: 5px 5px 5px 5px;
 	-moz-border-radius: 5px 5px 5px 5px;
 	-webkit-border-radius: 5px 5px 5px 5px;
@@ -88,4 +89,11 @@ form {
 .button:hover  {
     background-color:#48CFAD;
     color:#fafafa;
+}
+
+
+@media screen and (min-width: 480px) {
+	.search-box, .action-button {
+	    margin: 1em auto;
+	}
 }
