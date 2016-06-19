@@ -5,6 +5,12 @@ body {
 	color: white;
 }
 
+footer {
+	background-color: #434A54;
+	padding: 1em;
+	margin-top: 2em;
+}
+
 .hero {
     background-image: url("gods.jpg");
     background-color: #cccccc;

@@ -66,8 +66,8 @@ var GodDirectory = React.createClass({
         if (!this.state.data.gods) { return <Spinner /> }
 
         return (
-            <div clasName='row god-directory'>
-                <div className='hero jumbotron'>
+            <div clasName='container god-directory'>
+                <section className='hero jumbotron'>
                     <h1 className='text-center'>Directory of the Gods</h1>
                     <h2 className='text-center'>Find the right God for you, quickly and easily.</h2>
                     <div className='row search-inputs'>
@@ -78,13 +78,16 @@ var GodDirectory = React.createClass({
                             <ActionButton displayText='Find me an error page' clickAction={this.errorClickAction} />
                         </div>
                     </div>
-                </div>
-                {
-                    this.state.data.gods.map(function(god) {
-                        return <God key={god.id} name={god.name}
-                            superPower={god.superPower} dateOfDeath={god.dateOfDeath} />
-                    })
-                }
+                </section>
+                <section className='container'>
+                    {
+                        this.state.data.gods.map(function(god) {
+                            return <God key={god.id} name={god.name}
+                                superPower={god.superPower} dateOfDeath={god.dateOfDeath} />
+                        })
+                    }
+                </section>
+
             </div>
         )
     }

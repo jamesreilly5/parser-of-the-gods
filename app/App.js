@@ -1,5 +1,6 @@
 var React = require('react');
 var GodDirectory = require('./components/GodDirectory');
+var Footer = require('./components/Footer');
 
 var App = React.createClass({
 
@@ -7,6 +8,7 @@ var App = React.createClass({
 		return (
 			<div>
 				<GodDirectory/>
+				<Footer />
 			</div>
 		)
 	}
