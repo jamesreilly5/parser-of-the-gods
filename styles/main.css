@@ -56,6 +56,16 @@ form {
     padding:8px 15px;
     border:0px solid #dbdbdb;
 	color: black;
+
+	border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
+	-webkit-border-radius: 5px 5px 5px 5px;
+}
+
+.search-button {
+	border-radius: 0px 5px 5px 0px;
+	-moz-border-radius: 0px 5px 5px 0px;
+	-webkit-border-radius: 0px 5px 5px 0px;
 }
 
 .button {
@@ -67,6 +77,12 @@ form {
     border:2px solid #37BC9B;
     background-color:#37BC9B;
     color:#fafafa;
+}
+
+.action-button {
+	border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
+	-webkit-border-radius: 5px 5px 5px 5px;
 }
 
 .button:hover  {

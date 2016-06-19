@@ -11,9 +11,9 @@ var SearchBox = React.createClass({
 	render: function() {
 		return (
             <div className='row'>
-                <form className='col-md-6 col-md-offset-3' onSubmit={this.doSearch}>
+                <form className='col-md-6 col-md-offset-3 search-box' onSubmit={this.doSearch}>
                     <input id='search-input' className='search' type="text" placeholder={this.props.placeholder} />
-                    <input className='button' type="submit" value={this.props.displayText} />
+                    <input className='button search-button' type="submit" value={this.props.displayText} />
                 </form>
             </div>
 		)
